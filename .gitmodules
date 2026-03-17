@@ -3,3 +3,6 @@
 	url = https://github.com/SynkraAI/aiox-pro.git
 	branch = main
 	ignore = dirty
+[submodule "squads/community"]
+	path = squads/community
+	url = https://github.com/SynkraAI/aiox-squads.git

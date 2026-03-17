@@ -10,5 +10,45 @@
       "Bash(git push:*)",
       "Bash(node -e:*)"
     ]
+  },
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/synapse-wrapper.cjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/precompact-wrapper.cjs",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "node .claude/hooks/precompact-session-digest.cjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/synapse-engine.cjs",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
   }
 }
